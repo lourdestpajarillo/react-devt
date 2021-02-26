@@ -12,5 +12,10 @@ function ChatHeader() {
 export default ChatHeader
 
 const Container = styled.div`
-    background-color: green;
+    background-color: pink;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 20px;
 `
