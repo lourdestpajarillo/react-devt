@@ -5,7 +5,7 @@ import TurnedInNotOutlinedIcon from '@material-ui/icons/TurnedInNotOutlined';
 import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
 import MoreHorizOutlinedIcon from '@material-ui/icons/MoreHorizOutlined';
 
-export const sidebarItems = [
+export const sidebarMainItems = [
     {
         icon: <MessageOutlinedIcon />,
         text: "Thread"
@@ -29,5 +29,14 @@ export const sidebarItems = [
     {
         icon: <MoreHorizOutlinedIcon />,
         text: "More"
+    }
+];
+
+export const sidebarChannelItems = [
+    {
+        text: "Channel 1"
+    },
+    {
+        text: "Channel 2"
     }
 ];

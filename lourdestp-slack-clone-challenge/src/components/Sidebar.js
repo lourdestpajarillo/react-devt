@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {sidebarItems} from '../data/SidebarData';
+import {sidebarMainItems} from '../data/SidebarData';
+import {sidebarChannelItems} from '../data/SidebarData';
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
 import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
 
@@ -12,12 +13,12 @@ function Sidebar() {
                     Clever Programmer
                 </Name>
                 <NewMessage>
-                <AddCircleOutlineOutlinedIcon />
+                    <AddCircleOutlineOutlinedIcon />
                 </NewMessage>
             </WorkspaceContainer>
             <MainChannels>
                 {
-                    sidebarItems.map(item => (
+                    sidebarMainItems.map(item => (
                         <MainChannelItem>
                             {item.icon}
                             {item.text}
@@ -29,20 +30,22 @@ function Sidebar() {
                     Add
                 </MainChannelItem>
             </MainChannels>
+
             <ChannelsContainer>
               <NewChannelContainer>
-                <div>
-                    Channels
-                </div>
-                <AddOutlinedIcon />
+                Channels
+                <NewChannel>
+                    <AddOutlinedIcon />
+                </NewChannel>
               </NewChannelContainer>
               <ChannelsList>
-                  <Channel>
-                    # Channel 1
-                  </Channel>
-                  <Channel>
-                    # Channel 2
-                  </Channel>
+                {
+                    sidebarChannelItems.map(item => (
+                        <Channel>
+                            # {item.text}
+                        </Channel>
+                    ))
+                }
               </ChannelsList>
             </ChannelsContainer>
         </Container>
@@ -126,4 +129,18 @@ const Channel = styled.div`
     :hover {
         background: #350d36;
     }
+`
+
+const NewChannel = styled.div`
+    width: 28px;
+    height: 28px;
+    //background: white;
+    //color: #3f0e40;
+    //fill: #3f0e40;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+    //border-radius: 50%;
+    //margin-right: 16px;
+    cursor: pointer;
 `
