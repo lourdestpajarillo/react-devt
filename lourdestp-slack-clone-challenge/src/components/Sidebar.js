@@ -2,7 +2,7 @@ import React from 'react'
 
 function Sidebar() {
     return (
-        <div style={{ background: "blue" }}>
+        <div style={{ background: "purple" }}>
             Sidebar
         </div>
     )
