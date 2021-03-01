@@ -1,4 +1,5 @@
 import './App.css';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Chat from './components/Chat';
 import Login from './components/Login';
@@ -9,11 +10,19 @@ import db from './firebase';
 
 
 function App() {
+  const [rooms, setRooms] = useState([]);
+
   const getChannels = () => {
     db.collection('slack_rooms').onSnapshot((snapshot) => {
-      console.log(snapshot.docs)
+      setRooms(snapshot.docs.map((doc) => {
+        return { id: doc.id, name: doc.data().room_name }
+      }))
     })
   }
+
+  useEffect(() => {
+    getChannels()
+  }, [])
 
   return (
     <div className="App">
